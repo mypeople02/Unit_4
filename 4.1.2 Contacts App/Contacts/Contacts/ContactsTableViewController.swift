@@ -58,24 +58,20 @@ class ContactsTableViewController: UITableViewController {
             cell.detailTextLabel?.text = nil
         }
 
-/*
-//        let try1 = contactsList.addPeople(contactsList)
-//        cell.textLabel?.text = contactsList.addPeople()
-        
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "IconCell", for: indexPath)
-        let icon = icons[indexPath.row]
-        cell.textLabel?.text = icon.title
-        cell.detailTextLabel?.text = icon.subtitle
-        if let iconImage = icon.image {
-            cell.imageView?.image = iconImage
-        }
-*/
-        
-
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "openDetail") {
+            let destino = segue.destination as! contactDetails
+            if let indexpath = tableView.indexPath(for: sender as! UITableViewCell) {
+            let contactPicked = people[indexpath.row]
+            
+            destino.people = contactPicked
+            
+            }
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
