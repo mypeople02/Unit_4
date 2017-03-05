@@ -23,6 +23,13 @@ class ContactsTableViewController: UITableViewController {
         
         let people1 = contactsList.addPeople()
         people = people1.people
+        
+        let moveButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(ContactsTableViewController.toggleEdit))
+        navigationItem.leftBarButtonItem = moveButton
+    }
+    
+    func toggleEdit() {
+        tableView.setEditing(!tableView.isEditing, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -90,12 +97,13 @@ class ContactsTableViewController: UITableViewController {
         }
     }
 
-    /*
+    
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+        let contactMoving = people.remove(at: fromIndexPath.row)
+        people.insert(contactMoving, at: to.row)
     }
-    */
+    
 
     /*
     // Override to support conditional rearranging of the table view.
