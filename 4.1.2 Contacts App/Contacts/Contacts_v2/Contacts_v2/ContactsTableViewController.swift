@@ -1,8 +1,8 @@
 //
 //  ContactsTableViewController.swift
-//  Contacts
+//  Contacts_v2
 //
-//  Created by Ammi Tan on 2/13/17.
+//  Created by Ammi Tan on 3/1/17.
 //  Copyright © 2017 Ammi Tan. All rights reserved.
 //
 
@@ -10,7 +10,8 @@ import UIKit
 
 class ContactsTableViewController: UITableViewController {
 
-    var people = [contact]()
+    
+    var contacts:[Contact] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +22,13 @@ class ContactsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        let people1 = contactsList.addPeople()
-        people = people1.people
+        let jenny = Contact(phoneNumber: "867-5309")
+        let rich = Contact(name: "Rich", phoneNumber: "888-888-8888")
+        let mindy = Contact(name: "Mindy")
+        
+        self.contacts.append(jenny)
+        self.contacts.append(rich)
+        self.contacts.append(mindy)
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,62 +39,50 @@ class ContactsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // return the number of sections
+        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // return the number of rows
-        return people.count
+        // #warning Incomplete implementation, return the number of rows
+        return self.contacts.count
     }
 
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let contact = self.contacts[indexPath.row]
         
-        // Configure the cell...
-
-        let contact = people[indexPath.row]
-        cell.textLabel?.text = String("\(contact.firstName) \(contact.lastName)")
-        
-        if contact.phone != nil {
-            cell.detailTextLabel?.text = contact.phone
+        if let name = contact.name {
+            cell.textLabel?.text = name
         }
         else {
-            cell.detailTextLabel?.text = nil
+            cell.textLabel?.text = "No Name"
         }
 
         return cell
     }
-    
+
+
+    /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    
+    */
+
+    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            self.people.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }
+        }    
     }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "openDetail") {
-            let destino = segue.destination as! contactDetails
-            if let indexpath = tableView.indexPath(for: sender as! UITableViewCell) {
-            let contactPicked = people[indexpath.row]
-            
-            destino.people = contactPicked
-            
-            }
-        }
-    }
+    */
 
     /*
     // Override to support rearranging the table view.

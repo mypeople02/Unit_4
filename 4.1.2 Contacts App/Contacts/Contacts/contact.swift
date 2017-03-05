@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class contact {
+class contact: NSObject {
     var firstName: String
     var lastName: String
     var phone: String?
