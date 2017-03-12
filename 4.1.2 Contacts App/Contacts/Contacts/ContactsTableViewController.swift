@@ -87,7 +87,7 @@ class ContactsTableViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "openDetail") {
-            let destino = segue.destination as! contactDetails
+            let destino = segue.destination as! ContactDetails
             if let indexpath = tableView.indexPath(for: sender as! UITableViewCell) {
             let contactPicked = people[indexpath.row]
             
@@ -124,6 +124,11 @@ class ContactsTableViewController: UITableViewController {
  
     override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
         return false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
  
 }

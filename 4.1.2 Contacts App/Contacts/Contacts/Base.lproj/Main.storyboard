@@ -61,7 +61,7 @@
         <!--contactDetails-->
         <scene sceneID="uOe-p1-1FJ">
             <objects>
-                <viewController storyboardIdentifier="detailedContact" title="contactDetails" id="xgX-Sb-Zqb" customClass="contactDetails" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailedContact" title="contactDetails" id="xgX-Sb-Zqb" customClass="ContactDetails" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7ef-eK-mEF"/>
                         <viewControllerLayoutGuide type="bottom" id="Qnd-aI-3zR"/>
@@ -91,37 +91,43 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="firstName" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gXq-hj-BVF">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="firstName" borderStyle="roundedRect" placeholder="firstName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gXq-hj-BVF">
                                 <rect key="frame" x="168" y="96" width="176" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="displayDetails" destination="xgX-Sb-Zqb" eventType="valueChanged" id="Wom-GC-hPR"/>
+                                    <action selector="displayDetails" destination="xgX-Sb-Zqb" eventType="editingDidEnd" id="9tL-tZ-qqi"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="lastName" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I8E-Z9-afs">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="lastName" borderStyle="roundedRect" placeholder="last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I8E-Z9-afs">
                                 <rect key="frame" x="168" y="136" width="176" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="displayDetails" destination="xgX-Sb-Zqb" eventType="editingDidEnd" id="6nL-xV-8Fu"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="phone" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mkC-MC-TK3">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="phone" borderStyle="roundedRect" placeholder="phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mkC-MC-TK3">
                                 <rect key="frame" x="168" y="181" width="176" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="displayDetails" destination="xgX-Sb-Zqb" eventType="editingDidEnd" id="PNx-Wa-fW0"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="firstNameOutlet" destination="gXq-hj-BVF" id="Csg-d5-aj3"/>
-                        <outlet property="lastNameOutlet" destination="I8E-Z9-afs" id="qM7-vl-oEf"/>
-                        <outlet property="phoneOutlet" destination="mkC-MC-TK3" id="1MN-Hg-LS1"/>
+                        <outlet property="firstNameOutlet" destination="gXq-hj-BVF" id="Yf2-7d-Heo"/>
+                        <outlet property="lastNameOutlet" destination="I8E-Z9-afs" id="xsK-hN-VUt"/>
+                        <outlet property="phoneOutlet" destination="mkC-MC-TK3" id="6jl-Sf-M4c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eFp-5s-bTz" userLabel="First Responder" sceneMemberID="firstResponder"/>
