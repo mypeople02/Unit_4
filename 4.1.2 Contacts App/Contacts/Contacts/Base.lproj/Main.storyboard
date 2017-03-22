@@ -58,10 +58,10 @@
             </objects>
             <point key="canvasLocation" x="-535" y="825"/>
         </scene>
-        <!--contactDetails-->
+        <!--ContactDetails-->
         <scene sceneID="uOe-p1-1FJ">
             <objects>
-                <viewController storyboardIdentifier="detailedContact" title="contactDetails" id="xgX-Sb-Zqb" customClass="ContactDetails" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailedContact" title="ContactDetails" id="xgX-Sb-Zqb" customClass="ContactDetails" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7ef-eK-mEF"/>
                         <viewControllerLayoutGuide type="bottom" id="Qnd-aI-3zR"/>
@@ -96,9 +96,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
-                                    <action selector="displayDetails" destination="xgX-Sb-Zqb" eventType="editingDidEnd" id="9tL-tZ-qqi"/>
+                                    <action selector="textFieldDidEndEditing:" destination="xgX-Sb-Zqb" eventType="editingDidEnd" id="wCv-cA-HXE"/>
+                                    <outlet property="delegate" destination="xgX-Sb-Zqb" id="2Gz-Ij-RWn"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="lastName" borderStyle="roundedRect" placeholder="last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I8E-Z9-afs">
@@ -108,7 +109,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="displayDetails" destination="xgX-Sb-Zqb" eventType="editingDidEnd" id="6nL-xV-8Fu"/>
+                                    <action selector="textFieldDidEndEditing:" destination="xgX-Sb-Zqb" eventType="editingDidEnd" id="92V-ec-z8d"/>
+                                    <outlet property="delegate" destination="xgX-Sb-Zqb" id="0Qi-gH-tEA"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="phone" borderStyle="roundedRect" placeholder="phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mkC-MC-TK3">
@@ -118,7 +120,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="displayDetails" destination="xgX-Sb-Zqb" eventType="editingDidEnd" id="PNx-Wa-fW0"/>
+                                    <action selector="textFieldDidEndEditing:" destination="xgX-Sb-Zqb" eventType="editingDidEnd" id="9Bs-Kq-nRO"/>
+                                    <outlet property="delegate" destination="xgX-Sb-Zqb" id="pG6-Es-3l4"/>
                                 </connections>
                             </textField>
                         </subviews>

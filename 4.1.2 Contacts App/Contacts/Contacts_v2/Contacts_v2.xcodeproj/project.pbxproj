@@ -14,6 +14,7 @@
 		B46508511E67D67B00F7ABFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B465084F1E67D67B00F7ABFA /* LaunchScreen.storyboard */; };
 		B46508591E67D6E000F7ABFA /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46508581E67D6E000F7ABFA /* Contact.swift */; };
 		B465085B1E67D7DF00F7ABFA /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B465085A1E67D7DF00F7ABFA /* ContactsTableViewController.swift */; };
+		B4DF67451E7A068B00309EF5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DF67441E7A068B00309EF5 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		B46508521E67D67B00F7ABFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B46508581E67D6E000F7ABFA /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		B465085A1E67D7DF00F7ABFA /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
+		B4DF67441E7A068B00309EF5 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				B46508461E67D67B00F7ABFA /* AppDelegate.swift */,
 				B46508481E67D67B00F7ABFA /* ViewController.swift */,
 				B465084A1E67D67B00F7ABFA /* Main.storyboard */,
+				B4DF67441E7A068B00309EF5 /* DetailViewController.swift */,
 				B465085A1E67D7DF00F7ABFA /* ContactsTableViewController.swift */,
 				B46508581E67D6E000F7ABFA /* Contact.swift */,
 				B465084D1E67D67B00F7ABFA /* Assets.xcassets */,
@@ -144,6 +147,7 @@
 			files = (
 				B46508591E67D6E000F7ABFA /* Contact.swift in Sources */,
 				B46508491E67D67B00F7ABFA /* ViewController.swift in Sources */,
+				B4DF67451E7A068B00309EF5 /* DetailViewController.swift in Sources */,
 				B465085B1E67D7DF00F7ABFA /* ContactsTableViewController.swift in Sources */,
 				B46508471E67D67B00F7ABFA /* AppDelegate.swift in Sources */,
 			);
@@ -305,6 +309,7 @@
 				B46508571E67D67B00F7ABFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

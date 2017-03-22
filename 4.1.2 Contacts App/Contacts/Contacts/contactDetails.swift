@@ -10,33 +10,21 @@ import UIKit
 
 class ContactDetails: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var firstNameOutlet: UITextField!
-    @IBOutlet weak var lastNameOutlet: UITextField!
-    @IBOutlet weak var phoneOutlet: UITextField!
-
-    //    var people: contact? = nil
-    var people: contact
+    @IBOutlet var firstNameOutlet: UITextField!
+    @IBOutlet var lastNameOutlet: UITextField!
+    @IBOutlet var phoneOutlet: UITextField!
     
-
-    init(_: ContactDetails, people: contact) {
-        self.people = people
-        super.init(nibName: nil, bundle: nil)
-//        super.init(firstName: firstNameOutlet.text, lastName: lastNameOutlet.text)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
+    var theContact: contact? = nil
+//    var theContact: contact?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+ 
         self.firstNameOutlet.delegate = self
         self.lastNameOutlet.delegate = self
         self.phoneOutlet.delegate = self
-
-        displayDetails()
         
+        displayDetails()
     }
     
     override func didReceiveMemoryWarning() {
@@ -45,22 +33,27 @@ class ContactDetails: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func displayDetails() {
-        firstNameOutlet.text = people.firstName
-        lastNameOutlet.text = people.lastName
-        phoneOutlet.text = people.phone
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
+        firstNameOutlet.text = theContact?.firstName
+        lastNameOutlet.text = theContact?.lastName
+        phoneOutlet.text = theContact?.phone
+        
+            }
+ 
+    @IBAction func textFieldDidEndEditing(_ textField: UITextField) {
         if textField == firstNameOutlet {
-            people.firstName = textField.text!
-        } else if textField == self.lastNameOutlet {
-            self.people.lastName = textField.text!
+            theContact?.firstName = textField.text!
+            firstNameOutlet.text = textField.text!
+        }
+        else if textField == self.lastNameOutlet {
+            self.theContact?.lastName = textField.text!
         }
         else if textField == self.phoneOutlet {
-            self.people.phone = textField.text
+            self.theContact?.phone = textField.text
         }
     }
-}
+
+    
+ }
 
 
 
