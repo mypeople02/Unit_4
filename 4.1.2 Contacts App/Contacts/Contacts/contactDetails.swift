@@ -19,7 +19,7 @@ class ContactDetails: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
- 
+        
         self.firstNameOutlet.delegate = self
         self.lastNameOutlet.delegate = self
         self.phoneOutlet.delegate = self

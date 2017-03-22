@@ -26,6 +26,9 @@ class ContactsTableViewController: UITableViewController {
         
         let moveButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(ContactsTableViewController.toggleEdit))
         navigationItem.leftBarButtonItem = moveButton
+        
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(ContactsTableViewController.addContact))
+        navigationItem.rightBarButtonItem = addButton
     }
     
     func toggleEdit() {
@@ -129,6 +132,13 @@ class ContactsTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+    }
+    
+    func addContact() {
+        let newContact = contact(firstName: "New Contact", lastName: "")
+        self.people += [newContact]
+        let newIndexPath = IndexPath(row: self.people.count-1, section:0)
+        self.tableView.insertRows(at: [newIndexPath], with: .automatic)
     }
  
 }
